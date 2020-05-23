@@ -1,0 +1,28 @@
+@include set-shadow-box(view-container, 40, 50,true);
+
+.view-container {
+  margin: 10% auto;
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.seccion-container {
+
+  width: 60%;
+  border-radius: .5rem;
+  margin: 0 auto;
+  height: 35rem !important;
+  padding-top: 2.5rem;
+
+  &__label {
+    font-size: 2.5rem;
+    width: 50%;
+  }
+}

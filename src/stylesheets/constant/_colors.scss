@@ -1,0 +1,13 @@
+:root {
+  --background: rgb(246, 204, 132);
+  --box-shadow-section-color: rgb(72,102,133);
+  --box-shadow-section-background: rgb(119,119,119);
+  --section-background: rgb(140, 166, 232);
+  --font-color: rgb(19, 32, 96);
+}
+
+$background: var(--background);
+$box-shadow-section-color: var(--box-shadow-section-color);
+$box-shadow-section-background: var(--box-shadow-section-background);
+$section-background: var(--section-background);
+$font-color: var(--font-color);

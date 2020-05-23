@@ -1,0 +1,12 @@
+{
+  "site.name": "Tuten",
+  "login": "Iniciar Sesión",
+  "email": "Correo Electrónico",
+  "EmailInvalid": "Correo Electronico no valido",
+  "password": "Contraseña",
+  "bookingId" : "bookingId",
+  "name": "Cliente",
+  "bookingTime" : "Fecha de Creación",
+  "streetAddress": "Dirección",
+  "bookingPrice": "Precio"
+}

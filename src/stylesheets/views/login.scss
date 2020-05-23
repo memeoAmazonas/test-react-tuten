@@ -1,0 +1,26 @@
+.login-container{
+  text-align: center;
+  border: solid .1rem $border-color;
+  border-top-right-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+  border-bottom-right-radius: .5rem;
+  padding-top: 1.3rem;
+  height: 25rem;
+  &__login-button {
+    margin-top: 1.6rem;
+    width: 15rem;
+    height: 3rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    border-radius: .5rem;
+    border: .1rem;
+  &:disabled{
+    cursor: auto;
+  }
+  }
+  &__label-error {
+    color: rgb(255, 0, 0);
+    font-size: 1.2rem;
+  }
+
+}

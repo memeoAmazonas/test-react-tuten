@@ -1,0 +1,22 @@
+.title-tooltip {
+  font-size: 1.2rem;
+}
+
+.title-header {
+  font:{
+    size: 1.4rem;
+    weight: bold;
+  }
+}
+
+.title-table {
+  font: {
+    size: 2.5rem;
+    weight: bold;
+  }
+}
+.logout-btn {
+  @include button;
+  margin-bottom: 2rem;
+  margin-left: 85%;
+}

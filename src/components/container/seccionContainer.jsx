@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Label } from '../index';
+
+import Label from '../label';
 
 const SeccionContainer = ({ content, label }) => (
   <div className="seccion-container">
@@ -15,12 +16,10 @@ const SeccionContainer = ({ content, label }) => (
 
 SeccionContainer.propTypes = {
   content: PropTypes.element,
-  float: PropTypes.string,
   label: PropTypes.string,
 };
 SeccionContainer.defaultProps = {
   content: null,
-  float: 'left',
   label: '',
 };
 

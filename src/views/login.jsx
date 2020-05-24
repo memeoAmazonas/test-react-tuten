@@ -1,34 +1,30 @@
 import React from 'react';
-import { range } from 'lodash';
-import Spinner from 'react-bootstrap/Spinner';
+import { Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Redirect } from 'react-router-dom';
-import { Label, SeccionContainer, ViewContainer } from '../components';
-import InputLabel from '../components/inputLabel';
-import getSelector from '../redux/selectors';
-import { loginLoading, token } from '../redux/selectors/selectorsKeys';
-import { getLogin } from '../redux/action';
-
+import {
+  InputLabel, Label, LoadingSpinner, SeccionContainer, ViewContainer,
+} from '@/components';
+import { clearError, getLogin } from '@/redux/action';
+import getSelector from '@/redux/selectors';
+import {
+  error, loginLoading, token,
+} from '@/redux/selectors/selectorsKeys';
 
 const Login = () => {
   const dispatch = useDispatch();
-  const [email, setEmail] = React.useState('testapis@tuten.cl');
-  const [password, setPassword] = React.useState('1234');
+  const [email, setEmail] = React.useState();
+  const [password, setPassword] = React.useState();
   const [validLogin, setValidLogin] = React.useState(false);
+
   const loading = useSelector((state) => getSelector(state, loginLoading));
   const tokenLogin = useSelector((state) => getSelector(state, token));
-  dispatch(getLogin({ email, password }));
-  const loadingSpinner = range(6).map((item) => (
-    <Spinner
-      key={item}
-      animation="border"
-      role="status"
-      style={{ width: `${item}rem`, height: `${item}rem`, marginRight: '1rem' }}
-    />
-  ));
-  const disabled = (email === '' || password === '');
+  const errorLogin = useSelector((state) => getSelector(state, error));
+  const disabled = (!email || !password);
   const setEmailLogin = (value) => {
+    if (errorLogin) {
+      dispatch(clearError());
+    }
     if (validLogin) {
       setValidLogin(false);
     }
@@ -37,6 +33,8 @@ const Login = () => {
   const submit = () => {
     if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       dispatch(getLogin({ email, password }));
+      setEmail(null);
+      setPassword(null);
     } else {
       setValidLogin(true);
     }
@@ -47,6 +45,7 @@ const Login = () => {
       <span className="login-container__label-error">{validLogin && <Label id="EmailInvalid" />}</span>
       <InputLabel onchange={(e) => setPassword(e.target.value)} type="password" label="password" />
       <button
+        type="button"
         className="login-container__login-button"
         disabled={disabled}
         onClick={submit}
@@ -56,11 +55,18 @@ const Login = () => {
     </div>
   );
   if (tokenLogin) {
-    return (<Redirect to="/home" />);
+    return (
+      <Redirect to="/home" />
+    );
   }
   return (
     <ViewContainer>
-      {!loading ? <SeccionContainer content={content} label="login" /> : loadingSpinner}
+      {!loading ? <SeccionContainer content={content} label="login" /> : <LoadingSpinner />}
+      {errorLogin && (
+      <span className="login-container__label-error">
+        <Label id={errorLogin} />
+      </span>
+      )}
     </ViewContainer>
   );
 };

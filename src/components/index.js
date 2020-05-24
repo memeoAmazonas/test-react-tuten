@@ -1,4 +1,7 @@
+import InputLabel from './inputLabel';
 import Label from './label';
+import LoadingSpinner from './loadingSpinner';
+
 export * from './container';
 
-export { Label };
+export { InputLabel, Label, LoadingSpinner };

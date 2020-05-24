@@ -17,6 +17,7 @@ module.exports = (env, argv) => {
     devServer: {
       contentBase: path.join(__dirname, './'),
       publicPath: '/',
+      historyApiFallback: true,
     },
     output: {
       filename: isDevelopment ? 'js/[name].js' : 'js/[name].[hash].js',

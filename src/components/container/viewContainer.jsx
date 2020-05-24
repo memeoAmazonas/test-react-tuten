@@ -10,7 +10,10 @@ const ViewContainer = ({ children, classname }) => (
 );
 
 ViewContainer.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
   classname: PropTypes.string,
 };
 ViewContainer.defaultProps = {

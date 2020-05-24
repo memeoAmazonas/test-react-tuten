@@ -1,10 +1,11 @@
 import axios from 'axios';
 
-const apiCall = (url, method, data = null, headers = null) => axios({
+const apiCall = (url, method, params = null, data = null, headers = null) => axios({
   method,
+  params,
   url,
   data,
-  headers,
+  headers: { 'Content-Type': 'application/json', Accept: 'application/json', ...headers },
 });
 
 export default apiCall;

@@ -3,11 +3,11 @@ import Home from './views/home';
 
 const Routes = [
   {
-    path: '/l',
+    path: '/',
     component: Login,
   },
   {
-    path: '/',
+    path: '/home',
     component: Home,
   },
 ];

@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 
-import localization from './localization';
 import user from './user';
+import booking from './booking';
 
 const reducer = combineReducers({
-  localization,
+  booking,
   user,
 });
 

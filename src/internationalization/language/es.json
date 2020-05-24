@@ -4,9 +4,18 @@
   "email": "Correo Electrónico",
   "EmailInvalid": "Correo Electronico no valido",
   "password": "Contraseña",
-  "bookingId" : "bookingId",
-  "name": "Cliente",
+  "error.login": "A ocurrido un error iniciando sesion, por favor intentelo nuevamente",
+  "error.bookins": "A ocurrido un error consultando las reservaciones",
+  "bookingId" : "BookingId",
+  "client": "Cliente",
   "bookingTime" : "Fecha de Creación",
   "streetAddress": "Dirección",
-  "bookingPrice": "Precio"
+  "bookingPrice": "Precio",
+  "table.title": "Lista de Clientes",
+  "table.nomatch": "No existen resultados para su busqueda",
+  "table.search": "Buscar",
+  "table.filters": "Filtrar",
+  "table.filters.title": "Filtros",
+  "table.filters.reset": "Limpiar",
+  "logout": "Cerrar Sesión"
 }

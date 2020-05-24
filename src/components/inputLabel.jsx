@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { SeccionContainer } from './container';
-import { Label } from './index';
+import Label from './label';
 
 const InputLabel = ({ label, type, onchange }) => (
   <div className="input-label-container">
@@ -11,7 +10,13 @@ const InputLabel = ({ label, type, onchange }) => (
     </span>
     <FormattedMessage id={label}>
       {(placeholder) => (
-        <input type={type} placeholder={placeholder} onChange={onchange} className="input-label-container__input" />
+        <input
+          className="input-label-container__input"
+          maxLength={20}
+          onChange={onchange}
+          placeholder={placeholder}
+          type={type}
+        />
       )}
     </FormattedMessage>
   </div>

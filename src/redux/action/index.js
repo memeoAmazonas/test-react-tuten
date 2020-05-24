@@ -1,2 +1,2 @@
-export * from './localization';
 export * from './user';
+export * from './booking';

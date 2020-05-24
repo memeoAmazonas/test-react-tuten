@@ -1,12 +1,12 @@
 .input-label-container {
 
-  margin:  0 auto;
-  width: 50%;
-  height: auto;
+  align-content: center;
   display: flex;
   flex-direction: column;
-  align-content: center;
+  height: auto;
+  margin:  0 auto;
   padding-top: 1.3rem;
+  width: 50%;
 
   &__label {
     font-size: 1.6rem;
@@ -14,13 +14,12 @@
   }
 
   &__input{
-    height: 3rem;
-    width: 100%;
-    font-size: 1.4rem;
     border-radius: 0.2rem;
-    padding: 1.3rem;
+    font-size: 1.4rem;
+    height: 3rem;
     outline: none;
+    padding: 1.3rem;
+    width: 100%;
   }
-
 
 }

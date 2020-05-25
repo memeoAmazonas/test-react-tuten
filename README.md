@@ -27,6 +27,11 @@ se Genera un directorio dist donde se encuentra el compilado de la aplicacion.
 ```
 consultar el archivo package.json, seccion script.
 ```
+##adicionales
+```
+Soporta internacionalizacion, es necesario ajustar la raiz del proyecto y 
+crear el json de lenguajes, para mayor informacion consultar el directorio src/internacionalizacion 
+```
 enjoy :)
 
 
